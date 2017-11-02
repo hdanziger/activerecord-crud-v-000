@@ -23,7 +23,7 @@ def can_be_created_with_a_hash_of_attributes
 end
 
 def can_be_created_in_a_block
-  movie = Movie.create do |m|
+  movie = Movie.new do |m|
     m.title = title
     m.release_date = year
     movie
@@ -62,7 +62,8 @@ end
 def can_be_found_updated_and_saved
   # Updtate the title "Awesome Flick" to "Even Awesomer Flick"
   Movie.create(title: "Awesome Flick")
-  __
+  Movie.find_by(title: "Awesome Flick")
+  Movie
   __
   __
 end
